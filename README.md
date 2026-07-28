@@ -1,36 +1,54 @@
-# github-repo-template
+# Pocket Agent CLI (`apps/cli`)
 
-A **minimal GitHub repository template** from [@open-templates](https://github.com/open-templates). Community docs, Dependabot, CODEOWNERS, and issue/PR scaffolding — no application code until you add it.
+Terminal client for **pocket-agent-cli** — setup wizard, connection profiles, and health checks. Desktop install only (not deployed to Cloudflare).
 
-## Quick start
+Monorepo: [../../README.md](../../README.md) · Architecture: [../../docs/APPS_ARCHITECTURE.md](../../docs/APPS_ARCHITECTURE.md)
 
-1. Click **Use this template** on GitHub.
-2. Clone and copy personalized files from [`templates/`](templates/):
+## Install (monorepo)
 
 ```bash
-git clone https://github.com/open-templates/github-repo-template.git my-new-repo
-cd my-new-repo
-./scripts/init-from-template.sh
+cd apps/cli
+npm install
+npm link   # optional — global `pocket-agent-cli` command
 ```
 
-The hosted repo keeps **@open-templates** branding in root markdown until you run init. See [docs/init-from-template.md](docs/init-from-template.md).
+Or run without linking:
 
-### GitHub automation (included)
+```bash
+npm run dev -- status
+npm run dev -- stack
+```
 
-| File | Purpose |
-|------|---------|
-| [`.github/dependabot.yml`](.github/dependabot.yml) | Dependency update PRs |
-| [`.github/workflows/dependabot-signature.yml`](.github/workflows/dependabot-signature.yml) | `Co-authored-by` via `github.repository_owner` at runtime |
-| [`.github/CODEOWNERS`](.github/CODEOWNERS) | Review ownership |
+## Commands
 
-Full reference: **[docs/README.md](docs/README.md)** · [INSTRUCTIONS.md](INSTRUCTIONS.md) · [index.md](index.md) · [.agents/skills/](.agents/skills/)
+| Command | Description |
+|---------|-------------|
+| `setup [--profile all-local]` | Write `config/user-setup.yaml` at monorepo root |
+| `profile show` | Print current profile JSON |
+| `profile set <name>` | `all-local`, `hosted-ui-home-agent`, `cloud-only` |
+| `status` | Probe API worker `/status` and agent `/health` |
+| `stack` | Print local dev terminal commands |
 
-## License
+## Connection profiles
 
-MIT — see [LICENSE](LICENSE).
+| Profile | Typical use |
+|---------|-------------|
+| `all-local` | Web + API worker + agent on localhost (default) |
+| `hosted-ui-home-agent` | Cloudflare Pages + Worker + tunnel to home |
+| `cloud-only` | Hosted UI + Worker without Pocket Node |
 
----
+Profiles are stored in `config/user-setup.yaml` (same as `pocket-agent setup` on the Python side).
 
-## Repository documents
+## Environment
 
-**README** | [INSTRUCTIONS](INSTRUCTIONS.md) | [CHANGELOG](CHANGELOG.md) | [CONTRIBUTING](CONTRIBUTING.md) | [SECURITY](SECURITY.md) | [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)
+CLI reads monorepo root by finding `config/setup.defaults.yaml`. No secrets in the CLI package — Google OAuth stays in web/desktop.
+
+## Nested git
+
+This folder is a separate git repository inside the monorepo (`pocket-agent/pocket-agent-cli`).
+
+## Related
+
+- [MONOREPO.md](MONOREPO.md)
+- [Python agent](../../src/pocket_agent/) — `pocket-agent serve`
+- [Web](../web/) · [API](../api/) · [Desktop](../desktop/)
