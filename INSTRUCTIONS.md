@@ -1,26 +1,36 @@
 # Agent instructions — pocket-agent-cli
 
-Terminal client for the Pocket Agent monorepo. Pairs with the Python agent, API worker, and web app.
+**Scope:** Node.js CLI only. Global rules: [../INSTRUCTIONS.md](../INSTRUCTIONS.md).
 
 ## Commands
 
-```bash
-cd apps/cli && npm install
-npm run build
-pocket-agent-cli setup          # config/user-setup.yaml (all-local)
-pocket-agent-cli profile show
-pocket-agent-cli profile set hosted-ui-home-agent
-pocket-agent-cli status         # API + Pocket Node health
-pocket-agent-cli stack          # print dev terminals
+| Command | Purpose |
+|---------|---------|
+| `setup` | Write `../config/user-setup.yaml` |
+| `profile show` / `profile set` | Connection profiles |
+| `status` | Probe API + Pocket Node |
+| `stack` | Print local dev terminal commands |
+
+## Workspace paths
+
+- Config: `../config/user-setup.yaml`
+- Workspace root: parent of `../pocket-agent/` with `config/modules.yaml`
+
+## Source
+
+```
+src/
+  index.ts
+  commands.ts
+  lib/paths.ts   # findWorkspaceRoot()
 ```
 
-Dev without global link: `npm run dev -- status`
+## Do not add here
 
-## Monorepo
-
-- Config: `../../config/user-setup.yaml` (shared with `pocket-agent setup`)
-- Docs: [MONOREPO.md](MONOREPO.md), [../../docs/APPS_ARCHITECTURE.md](../../docs/APPS_ARCHITECTURE.md)
+- HTTP worker routes → `../pocket-agent-api/`
+- Web UI → `../pocket-agent-web/`
+- Agent logic → `../pocket-agent/`
 
 ## Deploy
 
-Desktop install only — `npm link` or future packaged binary. Not Cloudflare.
+Desktop install — `npm link` or packaged binary. Not Cloudflare.
