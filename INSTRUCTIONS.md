@@ -27,8 +27,8 @@ src/
 
 ## Do not add here
 
-- HTTP worker routes → `../pocket-agent-api/`
-- Web UI → `../pocket-agent-web/`
+- HTTP worker routes → `../pocket-agent-api-app/`
+- Web UI → `../pocket-agent-web-app/`
 - Agent logic → `../pocket-agent/`
 
 ## Deploy
