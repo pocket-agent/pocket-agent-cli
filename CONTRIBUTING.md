@@ -1,45 +1,33 @@
 # Contributing
 
-Thanks for helping improve this project.
+Thanks for contributing to **pocket-agent-cli** — part of the [Pocket Agent](https://github.com/pocket-agent) ecosystem.
 
-## Code of Conduct
+Repository scaffolding was bootstrapped from [@open-templates](https://github.com/open-templates) GitHub templates.
 
-Participation means agreeing to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
-
-## Local setup
+## Setup
 
 ```bash
-git clone https://github.com/open-templates/github-repo-template.git
-cd github-repo-template
+git clone https://github.com/pocket-agent/pocket-agent-cli.git
+cd pocket-agent-cli
+cd ../pocket-agent-sdk && npm run build
+npm install && npm run build
 ```
 
-Add stack-specific setup steps here once the project grows beyond the empty template.
-
-## What to work on
-
-- Start from the template and open focused PRs
-- Prefer one feature or fix per PR for clearer CHANGELOG batches
+In a full workspace clone, sibling repos live under the same org folder — see [../docs/WORKSPACE_LAYOUT.md](../docs/WORKSPACE_LAYOUT.md).
 
 ## Pull requests
 
 1. Branch from `main`.
-2. Keep changes small and focused.
-3. Run any checks you add (this template ships without CI workflows).
-4. Open a PR using the repository pull request template.
+2. Keep changes focused; update [CHANGELOG.md](CHANGELOG.md) for user-visible changes.
+3. Run `npm run build` before opening a PR.
 
 ## Commit style
 
-[Conventional commits](https://www.conventionalcommits.org/) are preferred so releases can be batched into [CHANGELOG.md](CHANGELOG.md):
-
-- `feat: add user profile endpoint`
-- `fix: handle missing env variable`
-- `docs: update setup section`
-
-See [INSTRUCTIONS.md](INSTRUCTIONS.md) for feature-based CHANGELOG workflow.
+[Conventional commits](https://www.conventionalcommits.org/) preferred — batched into [CHANGELOG.md](CHANGELOG.md) per release.
 
 ## License
 
-By contributing, you agree your changes are licensed under MIT (see [LICENSE](LICENSE)).
+MIT — see [LICENSE](LICENSE).
 
 ---
 

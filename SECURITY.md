@@ -2,54 +2,22 @@
 
 ## Supported versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| latest  | :white_check_mark: |
-| older   | :x:                |
-
-Update this table when you publish releases.
+| Version | Supported |
+| ------- | --------- |
+| 0.1.x   | :white_check_mark: |
 
 ## Reporting a vulnerability
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+**Do not report security vulnerabilities through public GitHub issues.**
 
-Report them via:
+Report via:
 
-1. **GitHub Security Advisory** — private vulnerability reporting on the repository
-2. **Direct contact** — [@open-templates](https://github.com/open-templates)
-
-### What to include
-
-- Clear description of the issue
-- Impact if exploited
-- Steps to reproduce
-- Affected versions and environment
-- Minimal proof-of-concept if applicable
-
-### Response timeline (targets)
-
-- **Initial response:** 48 hours
-- **Status update:** 7 days
-- **Resolution:** 30 days for confirmed issues
-
-## Security practices for adopters
-
-When you build on this template:
-
-1. **Secrets** — Never commit `.env`, keys, or credentials; use `.env.example` only.
-2. **Dependencies** — Keep Dependabot enabled and review update PRs.
-3. **Automation** — Restrict who can change `.github/workflows/` (CODEOWNERS helps).
-4. **Errors** — Do not expose stack traces or secrets in user-facing output.
+1. **GitHub Security Advisory** on [pocket-agent/pocket-agent-cli](https://github.com/pocket-agent/pocket-agent-cli)
+2. **Org contact** — [@pocket-agent](https://github.com/pocket-agent)
 
 ## Scope
 
-This policy applies to code and configuration **in this repository** once you add application logic. It does not cover third-party services you integrate later.
-
-## Recognition
-
-With your permission, we may credit reporters in security advisories or [CHANGELOG.md](CHANGELOG.md).
-
-Thank you for helping keep this project and its users safe.
+This policy covers **pocket-agent-cli** — terminal client for the Pocket Agent ecosystem.
 
 ---
 

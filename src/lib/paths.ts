@@ -2,21 +2,9 @@ import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { parse, stringify } from "yaml";
+import type { ConnectionProfile, UserSetup } from "@pocket-agent/sdk";
 
-export type ConnectionProfile =
-  | "all-local"
-  | "hosted-ui-home-agent"
-  | "cloud-only";
-
-export interface UserSetup {
-  profile?: ConnectionProfile;
-  web?: { mode?: string; url?: string };
-  api?: { mode?: string; url?: string };
-  agent?: { mode?: string; url?: string; command?: string };
-  routing?: { llm?: string };
-  tunnel?: { enabled?: boolean; public_url?: string };
-  google_oauth?: { client_id?: string };
-}
+export type { ConnectionProfile, UserSetup };
 
 export function findWorkspaceRoot(start = process.cwd()): string {
   let dir = start;

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import { Command } from "commander";
+import type { ConnectionProfile } from "@pocket-agent/sdk";
+import { CONNECTION_PROFILES } from "@pocket-agent/sdk";
 import {
   runProfileSet,
   runProfileShow,
@@ -7,7 +9,6 @@ import {
   runStack,
   runStatus,
 } from "./commands.js";
-import type { ConnectionProfile } from "./lib/paths.js";
 
 const program = new Command();
 
@@ -39,11 +40,7 @@ program
       return;
     }
     if (action === "set" && value) {
-      const allowed: ConnectionProfile[] = [
-        "all-local",
-        "hosted-ui-home-agent",
-        "cloud-only",
-      ];
+      const allowed = [...CONNECTION_PROFILES];
       if (!allowed.includes(value as ConnectionProfile)) {
         console.error(`Invalid profile. Choose: ${allowed.join(", ")}`);
         process.exit(1);

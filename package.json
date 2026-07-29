@@ -15,28 +15,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pocket-agent/pocket-agent.git",
-    "directory": "apps/cli"
+    "url": "git+https://github.com/pocket-agent/pocket-agent-cli.git"
   },
-  "homepage": "https://github.com/pocket-agent/pocket-agent/tree/main/apps/cli#readme",
+  "homepage": "https://github.com/pocket-agent/pocket-agent-cli#readme",
   "bugs": {
-    "url": "https://github.com/pocket-agent/pocket-agent/issues"
+    "url": "https://github.com/pocket-agent/pocket-agent-cli/issues"
   },
   "keywords": [
     "pocket-agent",
     "pocket-agent-cli",
     "cli"
   ],
+  "author": {
+    "name": "xarlizard",
+    "email": "38315638+xarlizard@users.noreply.github.com",
+    "url": "https://github.com/xarlizard"
+  },
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=24.0.0"
   },
   "dependencies": {
+    "@pocket-agent/sdk": "file:../pocket-agent-sdk",
     "commander": "^13.1.0",
     "yaml": "^2.8.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
+    "@types/node": "^24.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
   }

@@ -16,13 +16,17 @@
 - Config: `../config/user-setup.yaml`
 - Workspace root: parent of `../pocket-agent/` with `config/modules.yaml`
 
+## Shared types
+
+`ConnectionProfile` and `UserSetup` come from **`@pocket-agent/sdk`**. `lib/paths.ts` only handles workspace filesystem paths and YAML I/O.
+
 ## Source
 
 ```
 src/
   index.ts
   commands.ts
-  lib/paths.ts   # findWorkspaceRoot()
+  lib/paths.ts   # findWorkspaceRoot(), loadUserSetup()
 ```
 
 ## Do not add here
@@ -30,6 +34,7 @@ src/
 - HTTP worker routes → `../pocket-agent-api-app/`
 - Web UI → `../pocket-agent-web-app/`
 - Agent logic → `../pocket-agent/`
+- Shared types → `../pocket-agent-sdk/`
 
 ## Deploy
 
