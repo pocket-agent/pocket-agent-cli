@@ -18,10 +18,16 @@ export interface UserSetup {
   google_oauth?: { client_id?: string };
 }
 
-export function findMonorepoRoot(start = process.cwd()): string {
+export function findWorkspaceRoot(start = process.cwd()): string {
   let dir = start;
-  for (let i = 0; i < 8; i++) {
-    if (existsSync(path.join(dir, "config", "setup.defaults.yaml"))) {
+  for (let i = 0; i < 10; i++) {
+    if (existsSync(path.join(dir, "config", "modules.yaml"))) {
+      return dir;
+    }
+    if (
+      existsSync(path.join(dir, "config", "setup.defaults.yaml")) &&
+      existsSync(path.join(dir, "pocket-agent", "pyproject.toml"))
+    ) {
       return dir;
     }
     const parent = path.dirname(dir);
@@ -29,6 +35,11 @@ export function findMonorepoRoot(start = process.cwd()): string {
     dir = parent;
   }
   return start;
+}
+
+/** @deprecated use findWorkspaceRoot */
+export function findMonorepoRoot(start = process.cwd()): string {
+  return findWorkspaceRoot(start);
 }
 
 export async function loadUserSetup(root: string): Promise<UserSetup | null> {

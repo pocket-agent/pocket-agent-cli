@@ -65,21 +65,22 @@ export async function runStatus(): Promise<void> {
 
 export function runStack(): void {
   const root = findMonorepoRoot();
+  const agent = `${root}/pocket-agent`;
   console.log(`
 Pocket Agent — local dev stack
 
 Terminal 1 — Pocket Node
-  cd ${root}
-  pocket-agent serve
+  cd ${agent}
+  source .venv/bin/activate && pocket-agent serve
 
 Terminal 2 — API worker
-  cd ${root}/apps/api && npm run dev
+  cd ${root}/pocket-agent-api && npm run dev
 
 Terminal 3 — Web
-  cd ${root}/apps/web && bun run dev
+  cd ${root}/pocket-agent-web && bun run dev
 
 Optional — Desktop
-  cd ${root}/apps/desktop && npm run dev
+  cd ${root}/pocket-agent-desktop && npm run dev
 
 Monitor: http://localhost:5173/monitor
 `);
