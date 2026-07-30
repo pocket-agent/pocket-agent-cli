@@ -1,10 +1,31 @@
-# pocket-agent-cli
+<img src=".github/pocket-agent-image.png" width="200" alt="Pocket Agent" align="left"/>
 
-Terminal client for the open-source **[Pocket Agent](https://github.com/pocket-agent)** ecosystem · **v0.1.0**
+<div>
+<h3>pocket-agent-cli</h3>
+<p>
+Terminal client for <strong>Pocket Agent</strong> — write setup profiles, probe the local stack, and print dev commands for Pocket Node and the API worker.
+</p>
+<a href="https://github.com/pocket-agent/pocket-agent-desktop-app/releases"><img src="https://img.shields.io/badge/Download%20for%20macOS-007ec6?style=flat-square&logo=apple" width="175" alt="Download for macOS"/></a>
+</div>
 
-Setup profiles, health checks, and local dev stack hints.
+<br/><br/>
 
-## What's included (0.1.0)
+<div align="center">
+
+[![Release](https://img.shields.io/github/v/release/pocket-agent/pocket-agent-cli)](https://github.com/pocket-agent/pocket-agent-cli/releases)
+[![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/pocket-agent/pocket-agent-cli/blob/main/LICENSE)
+[![Node](https://img.shields.io/badge/Node-20+-blue)](https://github.com/pocket-agent/pocket-agent-cli)
+
+<br/>
+<br/>
+
+<img src=".github/screenshot.png" width="824" alt="Pocket Agent" style="border-radius: 5px;"/><br/>
+
+</div>
+
+<hr>
+
+## Features
 
 | Command | Description |
 |---------|-------------|
@@ -15,6 +36,19 @@ Setup profiles, health checks, and local dev stack hints.
 
 Uses `@pocket-agent/sdk` for `ConnectionProfile` and `UserSetup`.
 
+## Requirements
+
+- **Node 20+**
+- Built `@pocket-agent/sdk` sibling (workspace or npm)
+
+## Install
+
+```bash
+npm install -g pocket-agent-cli
+```
+
+Or from source: `npm install && npm run build` in this repo.
+
 ## Quick start
 
 ```bash
@@ -24,8 +58,34 @@ npx pocket-agent-cli setup
 npx pocket-agent-cli status
 ```
 
-Config: `../config/user-setup.yaml` (shared with `pocket-agent setup`).
+Config: `../config/user-setup.yaml` (shared with `pocket-agent setup` in a full workspace).
 
-## Docs
+## Development
 
-[INSTRUCTIONS.md](INSTRUCTIONS.md) · [CHANGELOG.md](CHANGELOG.md) · [../docs/WORKSPACE_LAYOUT.md](../docs/WORKSPACE_LAYOUT.md)
+```bash
+git clone https://github.com/pocket-agent/pocket-agent-cli.git
+cd pocket-agent-cli
+npm install && npm run build
+```
+
+See [INSTRUCTIONS.md](INSTRUCTIONS.md).
+
+## Documentation
+
+| Doc | Description |
+|-----|-------------|
+| [INSTRUCTIONS.md](INSTRUCTIONS.md) | CLI scope |
+| [CHANGELOG.md](CHANGELOG.md) | Release history |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contributing |
+
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+## Security
+
+To report a vulnerability, see [SECURITY.md](SECURITY.md).
+
+## License
+
+pocket-agent-cli is released under the [MIT License](LICENSE).
