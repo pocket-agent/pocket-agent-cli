@@ -36,7 +36,7 @@
     "node": ">=24.0.0"
   },
   "dependencies": {
-    "@pocket-agent/sdk": "file:../pocket-agent-sdk",
+    "pocket-agent-sdk": "file:../pocket-agent-sdk",
     "commander": "^13.1.0",
     "yaml": "^2.8.0"
   },

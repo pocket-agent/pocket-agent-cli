@@ -34,12 +34,12 @@ Terminal client for <strong>Pocket Agent</strong> — write setup profiles, prob
 | `status` | Probe API worker and Pocket Node |
 | `stack` | Print local dev terminal commands |
 
-Uses `@pocket-agent/sdk` for `ConnectionProfile` and `UserSetup`.
+Uses `pocket-agent-sdk` for `ConnectionProfile` and `UserSetup`.
 
 ## Requirements
 
 - **Node 20+**
-- Built `@pocket-agent/sdk` sibling (workspace or npm)
+- Built `pocket-agent-sdk` sibling (workspace or npm)
 
 ## Install
 

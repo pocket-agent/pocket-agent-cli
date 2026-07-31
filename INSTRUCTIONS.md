@@ -18,7 +18,7 @@
 
 ## Shared types
 
-`ConnectionProfile` and `UserSetup` come from **`@pocket-agent/sdk`**. `lib/paths.ts` only handles workspace filesystem paths and YAML I/O.
+`ConnectionProfile` and `UserSetup` come from **`pocket-agent-sdk`**. `lib/paths.ts` only handles workspace filesystem paths and YAML I/O.
 
 ## Source
 

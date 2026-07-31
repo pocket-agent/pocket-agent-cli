@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **Terminal client** — `setup`, `profile show|set`, `status`, `stack`
-- **Workspace config** — reads/writes `config/user-setup.yaml` with types from `@pocket-agent/sdk`
+- **Workspace config** — reads/writes `config/user-setup.yaml` with types from `pocket-agent-sdk`
 - **Health probes** — API worker `/status` and Pocket Node `/health`
 - **Dev stack hints** — prints local multi-terminal commands for web, API, agent, desktop
 

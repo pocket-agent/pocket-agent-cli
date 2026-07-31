@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { parse, stringify } from "yaml";
-import type { ConnectionProfile, UserSetup } from "@pocket-agent/sdk";
+import type { ConnectionProfile, UserSetup } from "pocket-agent-sdk";
 
 export type { ConnectionProfile, UserSetup };
 

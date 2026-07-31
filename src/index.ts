@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import type { ConnectionProfile } from "@pocket-agent/sdk";
-import { CONNECTION_PROFILES } from "@pocket-agent/sdk";
+import type { ConnectionProfile } from "pocket-agent-sdk";
+import { CONNECTION_PROFILES } from "pocket-agent-sdk";
 import {
   runProfileSet,
   runProfileShow,
